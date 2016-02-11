@@ -97,8 +97,10 @@ while ~isempty(email_contents)
     %       str2). It will return 1 only if the two strings are equivalent.
     %
 
-
-
+    if ismember(str,vocabList)
+        word_indices=[word_indices,find(ismember(vocabList,str)==1)]
+    end
+      
 
 
 
