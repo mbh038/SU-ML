@@ -23,7 +23,7 @@ sigma = 0.3;
 %        mean(double(predictions ~= yval))
 %
 % 0:01; 0:03; 0:1; 0:3; 1; 3; 10; 30
-tic
+
 CTry=[0.01 0.03 0.1 0.3 1 3 10 30];
 sigmaTry=[0.01 0.03 0.1 0.3 1 3 10 30];
 
@@ -43,7 +43,7 @@ for C_val =  CTry
         end
     end
 end
-toc
+
 %C=.3
 %sigma=0.1
 

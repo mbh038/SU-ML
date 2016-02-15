@@ -5,7 +5,7 @@ function sim = gaussianKernel(x1, x2, sigma)
 
 % Ensure that x1 and x2 are column vectors
 x1 = x1(:); x2 = x2(:);
-
+%n=size(x1,1)
 % You need to return the following variables correctly.
 sim = 0;
 
@@ -16,8 +16,15 @@ sim = 0;
 %
 %
 
+%vectorised version
 sim= exp (-(x1-x2)'*(x1-x2) / (2*sigma'*sigma));
 
+% unvectorised version
+%ell2=0
+%for k = 1:n
+%   ell2=ell2+ (x1(k)-x2(k))^2 
+%end
+%sim=exp(-ell2/(2*sigma'*sigma))
 % =============================================================
     
 end

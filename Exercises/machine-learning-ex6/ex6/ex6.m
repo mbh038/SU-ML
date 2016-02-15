@@ -139,12 +139,20 @@ pause;
 load('ex6data3.mat');
 
 % Try different SVM Parameters here
+tic
 [C, sigma] = dataset3Params(X, y, Xval, yval);
+toc
+fprintf('Program paused dataset3Params done. Press enter to continue.\n');
+pause;
 
 % Train the SVM
+tic
 model= svmTrain(X, y, C, @(x1, x2) gaussianKernel(x1, x2, sigma));
+toc
 visualizeBoundary(X, y, model);
 
-fprintf('Program paused. Press enter to continue.\n');
+fprintf('Program paused svmTrain done. Press enter to continue.\n');
 pause;
+
+
 
